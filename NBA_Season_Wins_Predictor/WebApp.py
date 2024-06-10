@@ -7,7 +7,7 @@ st.title('NBA Team Wins Predictor')
 st.text("Through this project, these 5 metrics helped best estimate an NBA team's season wins")
 
 #Retreiving Data Needed from Notebook
-model = joblib.load('NBA Season Wins Predictor\model.pkl')
+model = joblib.load('NBA_Season Wins_Predictor\model.pkl')
 means = np.array([0.01666667, 0.02      , 0.4997    , 0.5524    , 0.27556667]) #Need scaled means to standardize user inputs, retrieved using scaler.mean_ in the notebook
 StDev = np.array([4.37996068, 4.20050791, 0.02702733, 0.01791945, 0.02473686]) #Standard Deviations retrieved from scaler.scale_, needed as well to standardize user inputs
 
