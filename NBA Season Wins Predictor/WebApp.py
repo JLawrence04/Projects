@@ -13,16 +13,20 @@ StDev = np.array([4.37996068, 4.20050791, 0.02702733, 0.01791945, 0.02473686]) #
 
 
 #Creating Sliders for Users to toggle and test different metric combinations
-E_NET = st.slider('Estimated NET Rating (luck adjusted rating using advanced metrics)', min_value=-15.0, max_value=15.0, step = .1)
-#In dataset used and using pandas, minmum found for a team was -10.5 and max was 11.2
 
-NET = st.slider('NET Rating', min_value=-15.0, max_value=15.0,step = .1) #Minimum found was -10.6, max was 11.7
+left, right = st.columns(2, gap='large')
+with left:
+    OFF_REB = st.slider('Team Offensive Rebound PCT', min_value=.15,max_value=.40, value=means[4]) #In dataset used and using pandas, minimum found  was .224 and max was .344
 
-PIE = st.slider('Team PIE (Player Impact Estimate)',min_value=.35, max_value=.6) #Minimum found was .434, max was .555
+    NET = st.slider('NET Rating', min_value=-15.0, max_value=15.0,step = .1,value=means[1]) #Minimum found was -10.6, max was 11.7
 
-TS_PCT = st.slider('Team True Shooting PCT',min_value=.45, max_value=.7) #Minimum found was .529 and max was .609
+with right:
+    PIE = st.slider('Team PIE (Player Impact Estimate)',min_value=.35, max_value=.6,value=means[2]) #Minimum found was .434, max was .555
 
-OFF_REB = st.slider('Team Offensive Rebound PCT', min_value=.15,max_value=.40) #Minimum found  was .224 and max was .344
+    TS_PCT = st.slider('Team True Shooting PCT',min_value=.45, max_value=.7,value=means[3]) #Minimum found was .529 and max was .609
+
+E_NET = st.slider('Estimated NET Rating (luck adjusted rating using advanced metrics)', min_value=-15.0, max_value=15.0, step = .1,value=means[0])#Minmum found for a team was -10.5 and max was 11.2
+
 
 inputs = np.array([E_NET,NET,PIE,TS_PCT,OFF_REB])
 
@@ -33,4 +37,6 @@ def standardize(user_inputs):
 
 standardized_inputs = standardize(inputs)
 
-st.text(model.predict(standardized_inputs.reshape(1,-1)))
+st.header("Estimated Wins", divider='gray')
+
+st.subheader(round(float(model.predict(standardized_inputs.reshape(1,-1))), 4))
