@@ -18,14 +18,14 @@ left, right = st.columns(2, gap='large')
 with left:
     OFF_REB = st.slider('Team Offensive Rebound PCT', min_value=float(.15),max_value=float(.40), value=float(means[4])) #In dataset used and using pandas, minimum found  was .224 and max was .344
 
-    NET = st.slider('NET Rating', min_value=-15.0, max_value=15.0,step = .1,value=means[1]) #Minimum found was -10.6, max was 11.7
+    NET = st.slider('NET Rating', min_value=float(-15.0), max_value=float(15.0),step = .1,value=float(means[1])) #Minimum found was -10.6, max was 11.7
 
 with right:
-    PIE = st.slider('Team PIE (Player Impact Estimate)',min_value=.35, max_value=.6,value=means[2]) #Minimum found was .434, max was .555
+    PIE = st.slider('Team PIE (Player Impact Estimate)',min_value=float(.35), max_value=float(.6),value=float(means[2])) #Minimum found was .434, max was .555
 
-    TS_PCT = st.slider('Team True Shooting PCT',min_value=.45, max_value=.7,value=means[3]) #Minimum found was .529 and max was .609
+    TS_PCT = st.slider('Team True Shooting PCT',min_value=float(.45), max_value=float(.7),value=float(means[3])) #Minimum found was .529 and max was .609
 
-E_NET = st.slider('Estimated NET Rating (luck adjusted rating using advanced metrics)', min_value=-15.0, max_value=15.0, step = .1,value=means[0])#Minmum found for a team was -10.5 and max was 11.2
+E_NET = st.slider('Estimated NET Rating (luck adjusted rating using advanced metrics)', min_value=float(-15.0), max_value=float(15.0), step = .1,value=float(means[0]))#Minmum found for a team was -10.5 and max was 11.2
 
 
 inputs = np.array([E_NET,NET,PIE,TS_PCT,OFF_REB])
