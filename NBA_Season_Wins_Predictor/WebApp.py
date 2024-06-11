@@ -16,7 +16,7 @@ StDev = np.array([4.37996068, 4.20050791, 0.02702733, 0.01791945, 0.02473686]) #
 
 left, right = st.columns(2, gap='large')
 with left:
-    OFF_REB = st.slider('Team Offensive Rebound PCT', min_value=.15,max_value=.40, value=means[4]) #In dataset used and using pandas, minimum found  was .224 and max was .344
+    OFF_REB = st.slider('Team Offensive Rebound PCT', min_value=float(.15),max_value=float(.40), value=float(means[4])) #In dataset used and using pandas, minimum found  was .224 and max was .344
 
     NET = st.slider('NET Rating', min_value=-15.0, max_value=15.0,step = .1,value=means[1]) #Minimum found was -10.6, max was 11.7
 
