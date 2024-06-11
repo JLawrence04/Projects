@@ -27,7 +27,7 @@ with right:
 
 E_NET = st.slider('Estimated NET Rating (luck adjusted rating using advanced metrics)', min_value=float(-15.0), max_value=float(15.0), step = .1,value=float(means[0]))#Minmum found for a team was -10.5 and max was 11.2
 
-st.text('Normally the Estimated NET Rating value is similar to normal NET rating, \n so for this model to work well the values for both should be in a similar range to each other')
+st.text('Normally the Estimated NET Rating value is similar to normal NET rating, \nso for this model to work well the values for both should be in a similar \nrange to each other')
 inputs = np.array([E_NET,NET,PIE,TS_PCT,OFF_REB])
 
 
