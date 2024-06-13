@@ -46,3 +46,10 @@ On the unforeseen season the model wasn't exposed to, the model was very accurat
 The accuracy of this model indicates how just 4 metrics can really pin point how well an NBA team will do in a given season. A model like this can be used in the middle of the NBA season (maybe the quarter of half-way mark) to see if a team is overperforming or underperforming based on their metrics and what to expect from them for the rest of the season.
 
 Through the feature selection for this model, it indicates the importance metrics like TS percentage, and PIE have on NBA wins for a team. So a team looking to improve could look for players that specifically excel at these stats but they might not be huge name players which means they can improve their odds of winning games greatly at a discounted price.
+
+## Interactive Web Interface
+
+As part of this project I created an interactive web interface which was built using the web framework library Streamlit.
+Users can use sliders for each metric and adjust them to see real time adjustments in the predicted wins for a team with the theoretical metrics inputted.
+
+The web application can be accessed at this url: https://nba-wins-predictor.streamlit.app/
