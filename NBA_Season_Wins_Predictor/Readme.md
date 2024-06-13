@@ -6,7 +6,7 @@ As a data science and math student who loves playing and watching basketball, I 
 - Data collection from API called NBA_api.
 - Preprocessed data and did some data visualizations to gain insights on the data being worked with.
 - Standardized and scaled data for ML model so differences between feature values didn't interefere with ML model training and predicting.
-- Hyperparameter tuned a Support Vector Machine (SVR) model to find the optimal hyperparameters to use for the SVR ML model for the dataset being used in this project.
+- Hyperparameter tuned a Support Vector Regression (SVR) model to find the optimal hyperparameters to use for the SVR ML model for the dataset being used in this project.
 - Trained model from data of teams from previous seasons and tested models on teams unforeseen to the model including from seasons not used in training.
 - Created interactive web interface for user input and test different metric combinations and their associated predicted amount of wins
 
@@ -15,3 +15,27 @@ Data was collected using an API called NBA_api, specifically the 'leaguedashteam
 
 Installation site:[NBA_api](https://pypi.org/project/nba-api/)
 [Github of NBA_api](https://github.com/swar/nba_api)
+
+## Model
+This project used a Support Vector Regression (SVR) ML model which aims to find a line/hyperplane that best fits the data within a specific margin(epsilon hyperparameter) and penalizes predictions when finding the best hyperplane by a factor of the value set for the C hyperparameter.
+
+The linear kernel ended up being the best performing kernel. Normally the epsilon and C hyperparameters make the SVR regression model using a linear act different than a linear regression model. But through hyperparameter tuning, the best C value was 1 and the epsilon value was .0001. So there was basically no margin of error for the model and the error values were just multiplied by one. This means the SVR model acted like a linear regression model in reducing errors since linear regression models have no margin of errors and just try to reduce the mean squared error where the error isn't multiplied by any C value.
+
+I used the Grid Search algorithm to tune the SVR model and find the best hyperparameters for this model given the dataset the model is being applied to.
+
+## Results/Takeaways
+# Results
+The model was very accurate in predicting a team's wins on the test set:
+- Mean Average Error(MAE): 2.38
+- Root Mean Squared Error(RMSE): 3.07
+- R^2 Score: .932
+
+With an MAE score of 2.38 and RMSE of 3.07 that means the model predicts the wins of an NBA team within an average error of 2.38-3.07 wins(depending on which metric you prefer and preference for weughting different errors) which is pretty accurate considering there are 82 games in a given season.
+
+With R^2 scores being between 0 to 1 and scores closer to 1 indicate better model fit to the data, this model fits and predicts the data well with .932 being considered a very high score.
+
+I also tested the model on the 2016-2017 NBA season which wasn't used in the training or testing sets:
+- MAE: 2.44
+- RMSE: 3.14
+- R^2 score: .918
+
