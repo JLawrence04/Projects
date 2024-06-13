@@ -6,7 +6,7 @@ As a data science and math student who loves playing and watching basketball, I 
 - Data collection from API called NBA_api.
 - Preprocessed data and did some data visualizations to gain insights on the data being worked with.
 - Standardized and scaled data for ML model so differences between feature values didn't interefere with ML model training and predicting.
-- Hyperparameter tuned a Support Vector Machine (SVR) model to find the optimal hyperparameters to use for the SVR ML model for the dataset being used in this project.
+- Hyperparameter tuned a Support Vector Regression (SVR) model to find the optimal hyperparameters to use for the SVR ML model for the dataset being used in this project.
 - Trained model from data of teams from previous seasons and tested models on teams unforeseen to the model including from seasons not used in training.
 - Created interactive web interface for user input and test different metric combinations and their associated predicted amount of wins
 
@@ -15,3 +15,8 @@ Data was collected using an API called NBA_api, specifically the 'leaguedashteam
 
 Installation site:[NBA_api](https://pypi.org/project/nba-api/)
 [Github of NBA_api](https://github.com/swar/nba_api)
+
+## Model
+-This project used a Support Vector Regression (SVR) ML model which aims to find a line/hyperplane that best fits the data within a specific margin(epsilon hyperparameter) and penalizes predictions when finding the best hyperplane by a factor of the value set for the C hyperparameter.
+-The linear kernel ended up being the best performing kernel. Normally the epsilon and C hyperparameters make the SVR regression model using a linear act different than a linear regression model. But through hyperparameter tuning, the best C value was 1 and the epsilon value was .0001. So there was basically no margin of error for the model and the error values were just multiplied by one. This means the SVR model acted like a linear regression model in reducing errors since linear regression models have no margin of errors and just try to reduce the mean squared error where the error isn't multiplied by any C value.
+
