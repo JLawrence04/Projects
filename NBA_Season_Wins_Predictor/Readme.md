@@ -17,7 +17,24 @@ Installation site:[NBA_api](https://pypi.org/project/nba-api/)
 [Github of NBA_api](https://github.com/swar/nba_api)
 
 ## Model
--This project used a Support Vector Regression (SVR) ML model which aims to find a line/hyperplane that best fits the data within a specific margin(epsilon hyperparameter) and penalizes predictions when finding the best hyperplane by a factor of the value set for the C hyperparameter.
+This project used a Support Vector Regression (SVR) ML model which aims to find a line/hyperplane that best fits the data within a specific margin(epsilon hyperparameter) and penalizes predictions when finding the best hyperplane by a factor of the value set for the C hyperparameter.
 
--The linear kernel ended up being the best performing kernel. Normally the epsilon and C hyperparameters make the SVR regression model using a linear act different than a linear regression model. But through hyperparameter tuning, the best C value was 1 and the epsilon value was .0001. So there was basically no margin of error for the model and the error values were just multiplied by one. This means the SVR model acted like a linear regression model in reducing errors since linear regression models have no margin of errors and just try to reduce the mean squared error where the error isn't multiplied by any C value.
+The linear kernel ended up being the best performing kernel. Normally the epsilon and C hyperparameters make the SVR regression model using a linear act different than a linear regression model. But through hyperparameter tuning, the best C value was 1 and the epsilon value was .0001. So there was basically no margin of error for the model and the error values were just multiplied by one. This means the SVR model acted like a linear regression model in reducing errors since linear regression models have no margin of errors and just try to reduce the mean squared error where the error isn't multiplied by any C value.
 
+I used the Grid Search algorithm to tune the SVR model and find the best hyperparameters for this model given the dataset the model is being applied to.
+
+## Results/Takeaways
+# Results
+The model was very accurate in predicting a team's wins on the test set:
+-Mean Average Error(MAE): 2.38
+-Root Mean Squared Error(RMSE): 3.07
+-R^2 Score: .932
+
+With an MAE score of 2.38 and RMSE of 3.07 that means the model predicts the wins of an NBA team within an average error of 2.38-3.07 wins(depending on which metric you prefer and preference for weughting different errors) which is pretty accurate considering there are 82 games in a given season.
+
+With R^2 scores being between 0 to 1 and scores closer to 1 indicate better model fit to the data, this model fits and predicts the data well with .932 being considered a very high score.
+
+I also tested the model on the 2016-2017 NBA season which wasn't used in the training or testing sets:
+-MAE: 2.44
+-RMSE: 3.14
+R^2 score: .918
