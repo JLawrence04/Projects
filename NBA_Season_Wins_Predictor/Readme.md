@@ -32,7 +32,7 @@ The linear kernel ended up being the best performing kernel. Normally the epsilo
 I used the Grid Search algorithm to tune the SVR model and find the best hyperparameters for this model given the dataset the model is being applied to.
 
 ## Results/Takeaways
-# Results
+### Results
 **The model was very accurate in predicting a team's wins on the test set:**
 - Mean Average Error(MAE): 2.38
 - Root Mean Squared Error(RMSE): 3.07
