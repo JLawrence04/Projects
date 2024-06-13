@@ -21,6 +21,7 @@ As a data science and math student who loves playing and watching basketball, I 
 Data was collected using an API called NBA_api, specifically the 'leaguedashteamstats' endpoint. This endpoint included a variety of basic and advanced stats about all teams from previous seasons.
 
 Installation site: [NBA_api](https://pypi.org/project/nba-api/)
+
 [Github of NBA_api](https://github.com/swar/nba_api)
 
 ## Model
