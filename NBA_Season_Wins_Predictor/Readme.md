@@ -38,3 +38,10 @@ I also tested the model on the 2016-2017 NBA season which wasn't used in the tra
 -MAE: 2.44
 -RMSE: 3.14
 R^2 score: .918
+
+- Data collection from API called NBA_api.
+- Preprocessed data and did some data visualizations to gain insights on the data being worked with.
+- Standardized and scaled data for ML model so differences between feature values didn't interefere with ML model training and predicting.
+- Hyperparameter tuned a Support Vector Regression (SVR) model to find the optimal hyperparameters to use for the SVR ML model for the dataset being used in this project.
+- Trained model from data of teams from previous seasons and tested models on teams unforeseen to the model including from seasons not used in training.
+- Created interactive web interface for user input and test different metric combinations and their associated predicted amount of wins
