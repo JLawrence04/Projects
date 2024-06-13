@@ -42,6 +42,7 @@ With R^2 scores being between 0 to 1 and scores closer to 1 indicate better mode
 On the unforeseen season the model wasn't exposed to, the model was very accurate and was very close to the level of accuracy the model had on the test set.
 
 **Conclusion:**
+
 The accuracy of this model indicates how just 4 metrics can really pin point how well an NBA team will do in a given season. A model like this can be used in the middle of the NBA season (maybe the quarter of half-way mark) to see if a team is overperforming or underperforming based on their metrics and what to expect from them for the rest of the season.
 
 Through the feature selection for this model, it indicates the importance metrics like TS percentage, and PIE have on NBA wins for a team. So a team looking to improve could look for players that specifically excel at these stats but they might not be huge name players which means they can improve their odds of winning games greatly at a discounted price.
