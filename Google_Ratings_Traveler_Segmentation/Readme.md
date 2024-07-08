@@ -39,11 +39,11 @@ I experimented with 3 different ML clustering algorithms to find an optimal clus
 **Hierarchical Clustering Model:**
 - Hierarchical clustering works by treating each point as its own cluster and merging clusters together based on a certain criteria and until a threshold is reached. The three I criteria methods I tested out were complete, average, and ward.
  
-**Complete criteria:** Takes all the maximum distances between groups and merges the clusters with the smallest maximum distance.
+ **Complete criteria:** Takes all the maximum distances between groups and merges the clusters with the smallest maximum distance.
 
-**Average criteria:** Works by averaging all distances between points in grouped in different clusters and averages all the point distances, then you merge the 2 clusters of points with the smallest average distance. 
+ **Average criteria:** Works by averaging all distances between points in grouped in different clusters and averages all the point distances, then you merge the 2 clusters of points with the smallest average distance. 
 
-**Ward criteria:** Takes all the changes in variance of different cluster groups after merging and saves the merged clusters which have the smallest increase in variance.
+ **Ward criteria:** Takes all the changes in variance of different cluster groups after merging and saves the merged clusters which have the smallest increase in variance.
 
 - I used a dendrogram that graphs how the clusters are merged to find the right amount of clusters for each criteria method.
 - Ward method was deemed best to use and keep since it had the simplest dendrogram and best silouette score, optimal amount of clusters for this model was 3.
