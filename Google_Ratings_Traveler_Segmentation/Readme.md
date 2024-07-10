@@ -1,4 +1,4 @@
-# Traveler Segmentation Utilzing Google Reviews Data
+# Traveler Segmentation Utilizing Google Reviews Data
 Through some of the data science classes I've taken at Indiana University, I've learned the methodologies and math behind various clustering algorithms and how to apply them to a given dataset. Knowing the importance the insights and information using clustering can have for businesses and others that rely heavily on data collection to make decisions, I wanted to apply my knowledge on clustering on a dataset with practical and real-world applications. While looking through some of the datasets on the UC Irvine Machine Learning Repository, I found this dataset that contains the average Google ratings travelers in Europe gave for 24 different types of attractions travelers can visit. Finding this dataset made me realize through ML clustering algorithms I can categorize travelers based on the different attractions they enjoyed and the insights gained from this clustering is one way a company like a travel agency could give future travelers personalized recommendations on what to visit based on what group they fall into.
 
 ## Table of Contents
