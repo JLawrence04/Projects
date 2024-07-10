@@ -15,7 +15,7 @@ Through some of the data science classes I've taken at Indiana University, I've 
 - Performed dimensionality reduction using Principal Component Analysis(PCA) to improve and optimize clustering model performances
 - Created various data visualizations to gain insights on the data being worked with.
 - Experimented with 3 different types of clustering algorithms to find an optimal clustering model for this data.
-- Visualized the clusters of the different models to clearly see the trends and characteristics of each traveler group
+- Visualized the clusters of the different models to clearly see the trends and characteristics of each traveler group.
 - Utilized clustering metrics such as silhouette score, Davies-Bouldin Index score, and Calinski-Harabasz Index score to determine the best clustering model for this data.
 
 ## Dataset Used
