@@ -1,6 +1,9 @@
 #Importing Libraries
 import requests
 import json
+import re
+from textblob import TextBlob
+import contractions
 
 def find_page(input):
     url = 'https://en.wikipedia.org/w/rest.php/v1/search/title' #API endpoints needed were found on Wikipedia's MediaWiki REST API
@@ -22,6 +25,7 @@ def find_page(input):
 
         text_response = requests.get(url1, text_params)
         text_json = json.loads(text_response.text)
+
         #Retrieving only the text and filtering out other keys in the dictionary
         text = text_json['query']['pages']
         id = page_info['id']
@@ -29,4 +33,21 @@ def find_page(input):
         lst = [title,web_link,text[str(id)]['extract']]
         return lst
 
-print(find_page('basketball'))
+def clean_text(text):
+    text = text.lower() #Making all text lowercase so textblob doesn't weigh words differently because of capitalization
+    
+    text = contractions.fix(text)
+
+    text = re.sub("\n", " ", text) #\n indicates a line break and isn't needed for the sentiment analysis
+
+    text = re.sub(r'[^a-zA-Z\s]', '', text) #Removing special characters, punctuation, and numbers that will just add noise to sentiment analysis
+
+    text = re.sub('\t', "", text)
+
+    text = re.sub(r"\s{2,}", " ", text)
+    return text
+print([find_page('basket')[2]])
+
+x = [find_page('basket')[2]]
+
+print([clean_text(x[0])])
