@@ -14,7 +14,7 @@ def find_page(input):
     info = json.loads(info.text)
     
     if info['pages'] == []: #While testing random search cases, sometimes the search would result in no similar page being found
-        return 'MediaWiki API call could not find a similar wiki page to search input, try another search'
+        return None
     
     else:
         wiki_page = info['pages']
@@ -111,13 +111,26 @@ def sentiment(sentences,text):
 
         return [TextBlob(" ".join(text)).sentiment.polarity,TextBlob(" ".join(text)).sentiment.subjectivity,cluster_polarity]
     else:
-        return [TextBlob(" ".join(text)).sentiment.polarity,TextBlob(" ".join(text)).sentiment.subjectivity]
+        return [TextBlob(" ".join(text)).sentiment.polarity,TextBlob(" ".join(text)).sentiment.subjectivity,'Not enough sentences']
 
-x = [find_page('basketball')[2]]
+search = None
+while search != ('end' or 'End'):
+    search = str(input('Search for an article: '))
+    if find_page(search) == None:
+        print('MediaWiki API call could not find a similar wiki page to search input, try another search\n')
+    elif search != ('end' or 'End'):
+        title,link = find_page(search)[0],find_page(search)[1]
 
-x = clean_text(x[0])
+        print('Closest Wiki Page Found: ', title)
+        print(link,'\n')
 
-print('===================================')
-y = encode(x)
+        text = [find_page(search)[2]]
 
-print(sentiment(y,x))
+        cleaned_text = clean_text(text[0])
+        vectors = encode(cleaned_text)
+        sentiment_info = sentiment(vectors,cleaned_text)
+
+        print("Polarity Score: ", sentiment_info[0], "\nSubjectivity Score: ", sentiment_info[1])
+        print("\nSentence Cluster Group Polarity Scores (If Applicable): ", sentiment_info[2])
+
+    
