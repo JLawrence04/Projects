@@ -8,7 +8,7 @@ Polarity scores range from -1 to 1 with -1 indicating a very negative sentiment,
 - The script outputs the polarity and subjectivity scores of the text, a long with polarity scores of each clustered sentence group.
 - Performed word encoding to be able to cluster sentences together based on vector similarity, used k-means clustering to achieve this.
 
-### How To Run Script
+## How To Run Script
 In this folder for this project, there is a requirements.txt file with all the necessary libraries so in the command line you just need to run pip install -r (file path) to make sure the required python packages are installed then there shouldn't be an issues arising when running the python script.
 
 
