@@ -27,7 +27,9 @@ Last model I experimented with was my own CNN model from scratch and seeing if I
 ## Results/Takeaways
 ### Results (Test Set Accuracy)
 **CNN Model With DenseNet 121 Feature Extractor**: ~95% accuracy
+
 **CNN Model With DenseNet 121 Feature Extractor and Class Weights:** ~91-93% accuracy
+
 **Custom/Scratch made CNN Model:** ~70-75 accuracy (Model performance varied much more between epochs compared to the DenseNet 121 models)
 
 When it came to minimizing the model’s loss function, the DenseNet 121 model with no class weight performed the best again at around .15, the loss function value for the class weights model was around .3, and the custom/scratch model had a loss function value around .6 to .7(way more varied results for every epoch compared to the other models again).
