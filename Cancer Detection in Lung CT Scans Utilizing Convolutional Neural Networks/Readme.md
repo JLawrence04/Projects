@@ -2,12 +2,6 @@
 
 One of the reasons I’ve decided to major in Data Science is the impact the field can have on people’s lives and possibly even save lives in the medical field through methods like computer vision and neural networks which I used in this project. I created a project utilizing neural networks and I tuned and experimented with a convolutional neural network (CNN) to accurately classify lung CT scans as normal, benign, or malignant. The tuning and experimentation was pretty successful as I was able to achieve a 95% classification rate on the test set, images the model was not exposed to during the training stage. This project helped me learn how data science and machine learning can be used to help doctors make diagnosis for patients
 
-## Table of Contents
-- [Key Steps Taken in Project](#Key-Steps-Taken-in-Project)
-- [Dataset Used](#Dataset-Used)
-- [Models Experimented With](#Models-Experimented-With)
-- [Results/Takeaways](#Results/Takeaways)
-
 ## Key Steps Taken in Project
 - Pulled images from stored file one-by-one and stored file path and classification of image in dataframe
 - Resized images to reduce computational cost and to have uniformity for the model.
