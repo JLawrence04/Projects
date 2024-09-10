@@ -2,14 +2,17 @@
 
 One of the reasons I’ve decided to major in Data Science is the impact the field can have on people’s lives and possibly even save lives in the medical field through methods like computer vision and neural networks which I used in this project. I created a project utilizing neural networks and I tuned and experimented with a convolutional neural network (CNN) to accurately classify lung CT scans as normal, benign, or malignant. The tuning and experimentation was pretty successful as I was able to achieve a 95% classification rate on the test set, images the model was not exposed to during the training stage. This project helped me learn how data science and machine learning can be used to help doctors make diagnosis for patients
 
+
 ## Key Steps Taken in Project
 - Pulled images from stored file one-by-one and stored file path and classification of image in dataframe
 - Resized images to reduce computational cost and to have uniformity for the model.
 - Split data into train and test sets, normalized pixel values and did random image augmentations on training images so the model could generalize the patterns of the images better.
 - Experimented with DenseNet 121 CNN model, class weights, and creating CNN model from scratch to find best performing model.
 
+
 ## Dataset Used
 Dataset of lung CT scans was found on Kaggle and can be accessed by clicking this [link](https://www.kaggle.com/datasets/adityamahimkar/iqothnccd-lung-cancer-dataset).
+
 
 ## Models Experimented With
 
@@ -23,6 +26,7 @@ When looking at the project Jupyter Notebook, there is a huge imbalance between 
 
 ### Custom Made CNN
 Last model I experimented with was my own CNN model from scratch and seeing if I can improve upon the performance of the DenseNet models. I wasn't able to achieve the same accuracy and validation loss metrics as the previous models, but through experimentation and tuning the model I was able to raise the final model accuracy from 45-50% the first time I ran the model, to an accuracy of 70-75%.
+
 
 ## Results/Takeaways
 ### Results (Test Set Accuracy)
