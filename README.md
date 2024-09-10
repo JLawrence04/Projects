@@ -1,2 +1,2 @@
 # Projects
-Some projects I created related to ML and Data Science
+Some projects I created related to ML and Data Science. Utilizing what I've learned through my coursework and independent research, I've tried to experiment with different ML algorithms to solve real-world problems from datasets I've found or data I've collected through APIs. Through the process of working on these projects I've also improved my data analytical, cleaning, and preprocessing skills.
