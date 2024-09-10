@@ -18,7 +18,7 @@ Unlike a traditional CNN, DenseNet models have 'connectivity' between layers, la
 
 With the relatively small dataset being used for this project, using a pretrained model like DenseNet 121 as the feature extractor can help prevent overfitting since the model has already been trained on a much larger dataset(Imagenet) and can be adjusted and generalized to the specific dataset being used in this project.
 
-### DenseNet 121 Feature Extractor CNN model with class weights
+### DenseNet 121 Feature Extractor CNN model with Class Weights
 When looking at the project Jupyter Notebook, there is a huge imbalance between the amounts of images for each classification. So I decided I would experiment to see if using class weights for each classifcation will improve model performance.
 
 ### Custom Made CNN
