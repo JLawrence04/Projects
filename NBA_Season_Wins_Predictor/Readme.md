@@ -27,25 +27,25 @@ Data was collected using an API called NBA_api, specifically the 'leaguedashteam
 ## Model
 This project used a Support Vector Regression (SVR) ML model which aims to find a line/hyperplane that best fits the data within a specific margin(epsilon hyperparameter) and penalizes predictions when finding the best hyperplane by a factor of the value set for the C hyperparameter.
 
-The linear kernel ended up being the best performing kernel. Normally the epsilon and C hyperparameters make the SVR regression model using a linear act different than a linear regression model. But through hyperparameter tuning, the best C value was 1 and the epsilon value was .0001. So there was basically no margin of error for the model and the error values were just multiplied by one. This means the SVR model acted like a linear regression model in reducing errors since linear regression models have no margin of errors and just try to reduce the mean squared error where the error isn't multiplied by any C value.
+The linear kernel ended up being the best performing kernel. Normally the epsilon and C hyperparameters make the SVR regression model using a linear act different than a linear regression model. But through hyperparameter tuning, the best C value was 125 and the epsilon value was .1. This means the SVR model is essentially acting as a linear regression model that penalizes errors much harder than a conventional linear regression model.
 
 I used the Grid Search algorithm to tune the SVR model and find the best hyperparameters for this model given the dataset the model is being applied to.
 
 ## Results/Takeaways
 ### Results
 **The model was very accurate in predicting a team's wins on the test set:**
-- Mean Average Error(MAE): 2.38
-- Root Mean Squared Error(RMSE): 3.07
-- R^2 Score: .932
+- Mean Average Error(MAE): 2.81
+- Root Mean Squared Error(RMSE): 3.70
+- R^2 Score: .902
 
 With an MAE score of 2.38 and RMSE of 3.07 that means the model predicts the wins of an NBA team within an average error of 2.38-3.07 wins(depending on which metric you prefer and preference for weughting different errors) which is pretty accurate considering there are 82 games in a given season.
 
 With R^2 scores being between 0 to 1 and scores closer to 1 indicate better model fit to the data, this model fits and predicts the data well with .932 being considered a very high score.
 
 **I also tested the model on the 2016-2017 NBA season which wasn't used in the training or testing sets:**
-- MAE: 2.44
-- RMSE: 3.14
-- R^2 score: .918
+- MAE: 3.34
+- RMSE: 4.32
+- R^2 score: .846
 
 On the unforeseen season the model wasn't exposed to, the model was very accurate and was very close to the level of accuracy the model had on the test set.
 
@@ -53,11 +53,4 @@ On the unforeseen season the model wasn't exposed to, the model was very accurat
 
 The accuracy of this model indicates how just 4 metrics can really pin point how well an NBA team will do in a given season. A model like this can be used in the middle of the NBA season (maybe the quarter of half-way mark) to see if a team is overperforming or underperforming based on their metrics and what to expect from them for the rest of the season.
 
-Through the feature selection for this model, it indicates the importance metrics like TS percentage, and PIE have on NBA wins for a team. So a team looking to improve could look for players that specifically excel at these stats but they might not be huge name players which means they can improve their odds of winning games greatly at a discounted price.
-
-## Interactive Web Interface
-
-As part of this project I created an interactive web interface which was built using the web framework library Streamlit.
-Users can use sliders for each metric and adjust them to see real time adjustments in the predicted wins for a team with the theoretical metrics inputted.
-
-The web application can be accessed at this url: https://nba-wins-predictor.streamlit.app/
+Through the feature selection for this model, it indicates the importance metrics like TS percentage, AST/TO ratio, POSS,and PIE have on NBA wins for a team. So a team looking to improve could look for players that specifically excel at these stats (except for POSS which is only a team stat), but they might not be huge name players. Looking for these types of players can improve a team's odds of winning games greatly at a discounted price.
