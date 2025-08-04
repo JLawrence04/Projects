@@ -25,7 +25,7 @@ Dataset was collected from the UC Irvine Machine Learning Repository. This datas
 
 
 ## Clustering Methods
-I experimented with 3 different ML clustering algorithms to find an optimal clustering model for this dataset.
+I experimented with 3 different ML clustering algorithms to find an optimal clustering model for this dataset. **Tried other dimensionality methods including the non-linear UMAP method and other clustering methods such as the density-based method HDBSCAN but didn't include them in this notebook since results weren't as good as the models included in this notebook.**
 
 **K-Means Clustering Model:**
 - One of the most well-known clustering algorithms, for an arbitrary amount of clusters it find the optimal centroid/center coordinates for each cluster by originally starting each centroid at random points and constantly updating the centroid coordinates until no data points are changing cluster assignments. Data points are assigned to the clusters it is closest to.
