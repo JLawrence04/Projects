@@ -21,11 +21,12 @@ Through some of the data science classes I've taken at Indiana University, I've 
 ## Dataset Used
 Dataset was collected from the UC Irvine Machine Learning Repository. This dataset includes the average ratings for 24 different types of attractions for 5456 travelers who went to Europe. Google review ratings range from 1 to 5.
 
- [UCI ML Repository link to dataset](https://archive.ics.uci.edu/dataset/485/tarvel+review+ratings)
+ [Link to UCI ML Repository dataset](https://archive.ics.uci.edu/dataset/485/tarvel+review+ratings)
 
 
 ## Clustering Methods
-I experimented with 3 different ML clustering algorithms to find an optimal clustering model for this dataset. **Tried other dimensionality methods including the non-linear UMAP method and other clustering methods such as the density-based method HDBSCAN but didn't include them in this notebook since results weren't as good as the models included in this notebook.**
+I experimented with 3 different ML clustering algorithms to find an optimal clustering model for this dataset. 
+**Tried other dimensionality methods including the non-linear UMAP method and other clustering methods such as the density-based method HDBSCAN but didn't include them in this notebook since results weren't as good as the models included in this notebook.**
 
 **K-Means Clustering Model:**
 - One of the most well-known clustering algorithms, for an arbitrary amount of clusters it find the optimal centroid/center coordinates for each cluster by originally starting each centroid at random points and constantly updating the centroid coordinates until no data points are changing cluster assignments. Data points are assigned to the clusters it is closest to.
